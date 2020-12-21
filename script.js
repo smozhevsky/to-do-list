@@ -24,8 +24,7 @@ function realTime() {
 
   return day + "." + month + "." + year + " " + hours + ":" + minutes + ":" + seconds;
 }
-
-/* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
+// Обновление каждую сек.
 setInterval(function () {
   document.querySelector('.current-date').innerHTML = realTime();
 }, 1000);
