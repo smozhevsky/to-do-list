@@ -1,14 +1,17 @@
-const formText = document.querySelector('.form-text');
-const formButtonAdd = document.querySelector('.form-button-add');
-const output = document.querySelector('.output');
-const formButtonDel = document.querySelector('.form-button-del');
-const ul = document.querySelector('.output');
+const formText = document.querySelector(".form-text");
+const formButtonAdd = document.querySelector(".form-button-add");
+const formButtonDel = document.querySelector(".form-button-del");
+const ol = document.querySelector(".output");
+let itemsArray = localStorage.getItem("items")
+  ? JSON.parse(localStorage.getItem("items"))
+  : [];
 
-
+localStorage.setItem("items", JSON.stringify(itemsArray));
+const data = JSON.parse(localStorage.getItem("items"));
 
 /* (если число меньше десяти, перед числом добавляем ноль) */
 function zero_first_format(val) {
-  if (val < 10) val = '0' + val;
+  if (val < 10) val = "0" + val;
   return val;
 }
 
@@ -24,30 +27,50 @@ function realTime() {
 
   return `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 }
+
 // Обновление каждую сек.
 setInterval(function () {
-  document.querySelector('.current-date').innerHTML = realTime();
+  document.querySelector(".current-date").innerHTML = realTime();
 }, 0);
 
-// Add button
+//Добавление таски в список
+const taskAdd = (task) => {
+  // if (formText.value.length < 1) {
+  //   return;
+  // }; Почему-то из-за проверки не фиксится ol при перезагрузке
+  const li = document.createElement("li");
+  li.textContent = task;
+  li.setAttribute("class", "output-item");
+  ol.appendChild(li);
+};
+
+// Добавление таски по клику на btn
 formButtonAdd.addEventListener("click", () => {
-  var val = formText.value;
-  let ul = document.querySelector('.output');
-  let li = document.createElement('li');
-  li.appendChild(document.createTextNode(val));
-  li.setAttribute('class', 'output-item');
-  ul.appendChild(li);
-  localStorage.setItem("task", output.innerHTML);
+  itemsArray.push(formText.value);
+  localStorage.setItem("items", JSON.stringify(itemsArray));
+  taskAdd(formText.value);
+  formText.value = ""; //Чтобы не удалять таску из поля ввода каждый раз
+});
+
+// Добавление таски по нажатию enter
+formText.addEventListener("keypress", function (e) {
+  if (13 == e.keyCode) {
+    itemsArray.push(formText.value);
+    localStorage.setItem("items", JSON.stringify(itemsArray));
+    taskAdd(formText.value);
+    formText.value = "";
+  }
+});
+
+data.forEach(item => {
+  taskAdd(item);
 });
 
 // Del button
-formButtonDel.addEventListener("click", () => {
-  output.innerHTML = "";
-  localStorage.removeItem('todo', output.innerHTML);
+formButtonDel.addEventListener("click", function () {
+  localStorage.clear();
+  while (ol.firstChild) {
+    ol.removeChild(ol.firstChild);
+  }
+  itemsArray = [];
 });
-
-// function createTodo() {
-//   const li = document.createElement("li");
-//   const newTodo = formText.value;
-//   ul.append(newTodo, li);
-// }
