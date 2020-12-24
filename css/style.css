@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+}
+
+.main-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 20px 0 20px 0;
+}
+
+.current-date {
+  color: rgb(160, 75, 75);
+  font-size: 20px;
+  margin-bottom: 20px;
+}

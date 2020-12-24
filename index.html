@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>to-do list</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="css/reset.css" /> -->
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <div class="main">
-      <h1>to-do list</h1>
+      <h1 class="main-title">to-do list</h1>
 
-      <div class="current-date"></div>
+      <div class="main current-date"></div>
       <input
         class="form-text"
         type="text"
@@ -18,11 +19,11 @@
         placeholder="Введите задачу"
       />
       <button class="form-button-add">Добавить</button>
-      <button class="form-button-del">Удалить</button>
+      <button class="form-button-del">Очистить</button>
 
       <ol class="output"></ol>
     </div>
 
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
