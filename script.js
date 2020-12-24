@@ -22,21 +22,22 @@ function realTime() {
   var minutes = zero_first_format(current_datetime.getMinutes());
   var seconds = zero_first_format(current_datetime.getSeconds());
 
-  return day + "." + month + "." + year + " " + hours + ":" + minutes + ":" + seconds;
+  return `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
 }
 // Обновление каждую сек.
 setInterval(function () {
   document.querySelector('.current-date').innerHTML = realTime();
-}, 1000);
+}, 0);
 
 // Add button
 formButtonAdd.addEventListener("click", () => {
   var val = formText.value;
-  output.innerHTML = val;
-  if (!val) {
-    return;
-  }
-  localStorage.setItem("todo", output.innerHTML);
+  let ul = document.querySelector('.output');
+  let li = document.createElement('li');
+  li.appendChild(document.createTextNode(val));
+  li.setAttribute('class', 'output-item');
+  ul.appendChild(li);
+  localStorage.setItem("task", output.innerHTML);
 });
 
 // Del button
