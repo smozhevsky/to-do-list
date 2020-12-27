@@ -1,3 +1,11 @@
+.intro {
+  background-color: #e0e0e0;
+  background: url(../img/main.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1300px;
@@ -16,26 +24,28 @@
   width: 100%;
   max-width: 620px;
   font-family: monospace;
+  margin: 10px;
 }
 
 .input {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .main-title {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 40px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .form-text {
   text-align: center;
-  padding: 5px 0 5px 0;
-  border-radius: 5px;
+  padding: 10px 0 10px 0;
+  border-radius: 10px;
   background-color: #fafafa;
   border: 0;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
@@ -51,11 +61,11 @@
 
 .form-button {
   font-size: 20px;
-  padding: 5px;
+  padding: 10px;
   border: none;
   background-color: #5364c5;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: .3s box-shadow;
   font-family: monospace;
   transition: .2s background-color;
@@ -71,11 +81,17 @@
 }
 
 .task-list {
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #fafafa;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   width: 100%;
   font-size: 20px;
+  padding: 10px 0 10px 0;
+}
+
+.task-list-output {
+  list-style-type: decimal;
+  margin-left: 50px;
 }
 
 @media (max-width: 640px) {
