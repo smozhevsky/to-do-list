@@ -92,10 +92,10 @@
 .task-list-output {
   list-style-type: decimal;
   margin-left: 50px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  /* Не работает( */
+}
+
+.output-item {
+  word-break: break-all;
 }
 
 @media (max-width: 640px) {
