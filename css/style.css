@@ -82,7 +82,7 @@
 
 .task-list {
   border-radius: 10px;
-  background-color: #fafafa;
+  background-color: hsla(0, 0%, 98%, 0.911);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   width: 100%;
   font-size: 20px;
@@ -92,6 +92,10 @@
 .task-list-output {
   list-style-type: decimal;
   margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* Не работает( */
 }
 
 @media (max-width: 640px) {
