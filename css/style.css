@@ -1,8 +1,27 @@
+@font-face {
+  font-family: Pompadur;
+  src: url(fonts/pompadur.ttf);
+ }
+
+.container {
+  margin: 0 auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
 .main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main-inner {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
+  padding: 10px;
+  font-family: monospace;
 }
 
 .main-title {
@@ -10,10 +29,35 @@
   font-weight: 700;
   font-size: 20px;
   margin: 20px 0 20px 0;
+  text-align: center;
 }
 
-.current-date {
-  color: rgb(160, 75, 75);
-  font-size: 20px;
-  margin-bottom: 20px;
+.form-text {
+  padding: 5px;
+  border-radius:5px;
+  background-color: #fafafa;
+  border:0;
+  box-shadow:0 0 4px rgba(0,0,0,0.3);
+  transition: .3s box-shadow;
+  font-family: monospace;
 }
+
+.form-text:hover {
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
+}
+
+.form-button {
+  padding: 5px;
+  margin-left: 5px;
+  border:none;
+  background-color:#5364c5;
+  color:#fff;
+  border-radius:5px;
+  transition: .3s box-shadow;
+  font-family: monospace;
+}
+
+.form-button:hover {
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
+}
+
