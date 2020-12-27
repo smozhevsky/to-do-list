@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 350px;
+  max-width: 550px;
   font-family: monospace;
 }
 
@@ -27,19 +27,22 @@
 .main-title {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 40px;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .form-text {
-  padding: 5px;
+  text-align: center;
+  padding: 5px 0 5px 0;
   border-radius: 5px;
   background-color: #fafafa;
   border: 0;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   transition: .3s box-shadow;
   font-family: monospace;
+  font-size: 20px;
+  width: 300px;
 }
 
 .form-text:hover {
@@ -47,6 +50,7 @@
 }
 
 .form-button {
+  font-size: 20px;
   padding: 5px;
   border: none;
   background-color: #5364c5;
@@ -70,9 +74,10 @@
   background-color: #fafafa;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   width: 100%;
+  font-size: 20px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .input {
     display: flex;
     flex-direction: column;
@@ -86,6 +91,13 @@
 
   .form-button {
     margin-top: 10px;
-    width: 100px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 350px) {
+  .input-buttons {
+    display: flex;
+    flex-direction: column;
   }
 }
