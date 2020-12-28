@@ -1,7 +1,7 @@
 const formText = document.querySelector(".form-text");
 const formButtonAdd = document.querySelector(".form-button-add");
 const formButtonDel = document.querySelector(".form-button-del");
-const ul = document.querySelector(".task-list-output");
+const ol = document.querySelector(".task-list-output");
 let itemsArray = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
@@ -18,7 +18,7 @@ const taskAdd = (task) => {
   const li = document.createElement("li");
   li.textContent = task;
   li.setAttribute("class", "output-item");
-  ul.appendChild(li);
+  ol.append(li);
 };
 
 // Добавление таски по клику на btn
@@ -49,8 +49,8 @@ data.forEach(item => {
 // Удаление списка и очистка Local storage
 formButtonDel.addEventListener("click", function () {
   localStorage.clear();
-  while (ul.firstChild) {
-    ul.removeChild(ul.firstChild);
+  while (ol.firstChild) {
+    ol.removeChild(ol.firstChild);
   }
   itemsArray = [];
 });
